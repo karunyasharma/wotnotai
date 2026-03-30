@@ -2,32 +2,140 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Account Opening Chatbot</title>
+  <title>Account Opening Portal</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
-    body {
+    * {
       margin: 0;
-      font-family: Arial;
-      background: #0f172a;
-      color: white;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
     }
 
-    .header {
-      height: 60px;
-      background: #111827;
-      display: flex;
-      align-items: center;
-      padding-left: 20px;
-      font-size: 18px;
-      font-weight: bold;
+    body {
+      background: #f8fafc;
+      color: #1e293b;
     }
+
+    /* NAVBAR */
+    .navbar {
+      height: 60px;
+      background: white;
+      border-bottom: 1px solid #e2e8f0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 40px;
+    }
+
+    .logo {
+      font-weight: 600;
+      font-size: 18px;
+      color: #0f172a;
+    }
+
+    .secure {
+      font-size: 13px;
+      color: #16a34a;
+      font-weight: 500;
+    }
+
+    /* MAIN LAYOUT */
+    .container {
+      display: flex;
+      height: calc(100vh - 60px);
+    }
+
+    /* LEFT PANEL */
+    .left {
+      width: 40%;
+      background: #0f172a;
+      color: white;
+      padding: 60px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .left h1 {
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+
+    .left p {
+      color: #94a3b8;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+
+    .features {
+      list-style: none;
+      line-height: 2;
+    }
+
+    .features li {
+      margin-bottom: 10px;
+    }
+
+    /* RIGHT PANEL */
+    .right {
+      width: 60%;
+      position: relative;
+      background: #ffffff;
+    }
+
+    /* Chatbot Full Area */
+    #wotnot-chat-widget {
+      position: fixed !important;
+      top: 60px !important;
+      left: 40% !important;
+      width: 60vw !important;
+      height: calc(100vh - 60px) !important;
+      z-index: 999;
+    }
+
+    /* FOOTER */
+    .footer {
+      position: fixed;
+      bottom: 10px;
+      width: 100%;
+      text-align: center;
+      font-size: 12px;
+      color: #94a3b8;
+    }
+
   </style>
 </head>
 
 <body>
 
-<div class="header">
-  🏦 Account Opening Assistant
+<!-- NAVBAR -->
+<div class="navbar">
+  <div class="logo">🏦 Bank Account Portal</div>
+  <div class="secure">🔒 Secure & Encrypted</div>
+</div>
+
+<!-- MAIN -->
+<div class="container">
+
+  <!-- LEFT SIDE -->
+  <div class="left">
+    <h1>Open Your Account Online</h1>
+    <p>Complete your account opening process quickly and securely using our AI-powered assistant.</p>
+
+    <ul class="features">
+      <li>✔ Instant Account Opening</li>
+      <li>✔ Secure KYC Verification</li>
+      <li>✔ Document Upload Assistance</li>
+      <li>✔ Real-time Status Updates</li>
+    </ul>
+  </div>
+
+  <!-- RIGHT SIDE (Chatbot Area) -->
+  <div class="right"></div>
+
 </div>
 
 <!-- CHATBOT SCRIPT -->
@@ -40,9 +148,14 @@
       if (window.WotNot) {
         WotNot.open();
       }
-    }, 2000);
+    }, 1500);
   });
 </script>
+
+<!-- FOOTER -->
+<div class="footer">
+  © 2026 Digital Banking | All rights reserved
+</div>
 
 </body>
 </html>
